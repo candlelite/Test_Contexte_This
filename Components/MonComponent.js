@@ -8,13 +8,19 @@ class MonComponent extends React.Component {
         this.searchedText = "Star wars"
     }
 
-    _maFonction() {
-        console.log("Log 2 | searchText : " + this.searchedText)
-    }
+    _maFonction(functionCallback) {
+       console.log("Log 2 | searchedText : " + this.searchedText)
+       functionCallback()
+   }
 
-    render() {
-        console.log("Log 1 | searchText : " + this.searchedText)
-        this._maFonction()
+   _maFonctionATransmettre() {
+       console.log("Log 3 | searchedText : " + this.searchedText)
+       console.log("Log 3 | searchedText.length : " + this.searchedText.length)
+   }
+
+   render() {
+       console.log("Log 1 | searchedText : " + this.searchedText)
+        this._maFonction(this._maFonctionATransmettre)
         return ( <View></View> )
     }
 }
